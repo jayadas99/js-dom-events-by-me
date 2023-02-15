@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegate</title>
+</head>
+<body>
+    <h1>Explore Event Delegate</h1>
+    <section>
+        <!-- ul#list-container>li.item*6>lorem3 -->
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Numquam, est mollitia.</li>
+            <li class="item">Soluta, aliquam fugiat!</li>
+            <li class="item">Quaerat, accusamus reiciendis.</li>
+            <li class="item">Veritatis, nulla possimus!</li>
+            <li class="item">Quisquam, placeat tenetur?</li>
+        </ul>
+        <button id="btn-add-item">Add Item</button>
+    </section>
+    <script>
+        // const items = document.getElementsByClassName('item');
+        // // console.log(items);
+        // for(const item of items){
+        //     // console.log(item);
+        //     item.addEventListener('click', function(){
+        //         console.log(item);
+        //     })
+        // }
+
+        // const items = document.getElementsByClassName('item');
+        // // console.log(items);
+        // for(const item of items){
+        //     // console.log(item);
+        //     item.addEventListener('click', function(event){
+        //         // console.log(event.target.parentNode);
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+
+
+
+         document.getElementById('list-container').addEventListener('click', function(event){
+                // console.log(event.target);
+                event.target.parentNode.removeChild(event.target);
+         })
+
+
+
+
+        document.getElementById('btn-add-item').addEventListener('click', function(){
+            const listContainer = document.getElementById('list-container');
+
+            const li = document.createElement('li');
+            li.innerText = "Brand New Item added";
+            li.classList.add('item')
+            listContainer.appendChild(li);
+        })
+    </script>
+</body>
+</html>
